@@ -1,8 +1,8 @@
-# ⚡ Aragon Connect
+# <img width="30" align="left" src="https://user-images.githubusercontent.com/36158/85042092-b17f5b80-b182-11ea-8011-70030a7c7362.png" alt="Aragon Connect"> Aragon Connect
 
 [<img src="https://img.shields.io/github/package-json/v/aragon/connect?label=npm" alt="" />](https://www.npmjs.com/package/@aragon/connect) [<img src="https://img.shields.io/bundlephobia/minzip/@aragon/connect" alt="" />](https://bundlephobia.com/result?p=@aragon/connect) [![codecov](https://codecov.io/gh/aragon/connect/branch/master/graph/badge.svg)](https://codecov.io/gh/aragon/connect)
 
-Note: Aragon Connect is still in active development and its API might change until it reaches 1.0.
+Aragon Connect is still in active development and its API might change until it reaches 1.0.
 
 ## Usage
 
@@ -24,18 +24,18 @@ for (const transaction of transactions) {
 
 ## Documentation
 
-| Name                                              | Description                                                                                 |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [connect()](docs/connect.md)                      | Connect to an organization (start here).                                                    |
-| [App](docs/app.md)                                | App installed in an organization.                                                           |
-| [Connectors](docs/connectors.md)                  | Connectors that fetch data from the chain.                                                  |
-| [Intent](docs/intent.md)                          | Intent to change anything on an organization or its apps.                                   |
-| [Organization](docs/organization.md)              | Aragon organization.                                                                        |
-| [Permission](docs/permission.md)                  | Permission represents the relation between an app role and an entity.                       |
-| [Repo](docs/repo.md)                              | App repository.                                                                             |
-| [Role](docs/role.md)                              | Single role, which can get assigned to create a permission.                                 |
-| [TransactionPath](docs/transaction-path.md)       | Single transaction path.                                                                    |
-| [TransactionRequest](docs/transaction-request.md) | Object describing a transaction that can get signed by a library like ethers.js or Web3.js. |
+| Name                                                  | Description                                                                                 |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [connect()](docs/api/connect.md)                      | Connect to an organization (start here).                                                    |
+| [App](docs/api/app.md)                                | App installed in an organization.                                                           |
+| [Connectors](docs/api/connectors.md)                  | Connectors that fetch data from the chain.                                                  |
+| [Intent](docs/api/intent.md)                          | Intent to change anything on an organization or its apps.                                   |
+| [Organization](docs/api/organization.md)              | Aragon organization.                                                                        |
+| [Permission](docs/api/permission.md)                  | Permission represents the relation between an app role and an entity.                       |
+| [Repo](docs/api/repo.md)                              | App repository.                                                                             |
+| [Role](docs/api/role.md)                              | Single role, which can get assigned to create a permission.                                 |
+| [TransactionPath](docs/api/transaction-path.md)       | Single transaction path.                                                                    |
+| [TransactionRequest](docs/api/transaction-request.md) | Object describing a transaction that can get signed by a library like ethers.js or Web3.js. |
 
 ## Packages
 
