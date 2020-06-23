@@ -22,10 +22,9 @@ A connector that read information from a JSON string. Useful for testing / debug
 const myorg = await connect('myorg', {
   connector: new ConnectorTheGraph({
     daoSubgraphUrl: 'http://…',
-    appSubgraphUrl: (repoId) => {
+    appSubgraphUrl: repoId => {
       return 'http://…'
     },
   }),
 })
 ```
-

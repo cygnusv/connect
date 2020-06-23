@@ -59,7 +59,7 @@ If your writting a subgraph for an Aragon app, its data source specification sho
 If you'd like to disable a specific injected data source, such as for example the OrganizationTemplates data sources, you may do so by using an exclamation symbol:
 
 ```yaml
-{{!> OrganizationTemplates.yaml}}
+{ { !> OrganizationTemplates.yaml } }
 ```
 
 #### A4. Provide the ABIs defined in your data source
@@ -99,16 +99,18 @@ Of course, this deployment will take much more time to index, potentially days.
 ### B. Create the Connector
 
 #### B1. Define the queries
+
 #### B2. Call the queries from the connector
+
 #### B3. Define the entities
 
 ## Troubleshooting
 
-* Some data is missing in my subgraph
-Even though the way in which this template collects many data sources, there are some cases in which a contract is deployed in a way that isolates it from the general data sources. For example, you may deploy an organization manually, without using the official templates or factories. If this is the case, such organization will not be detected by the bootstrapped data sources. Also, there may be a bug in which this template scans the data sources. If you find missing information in your subgraph, lets discuss your case to see if there's a bug in the template. If a bug is not the case, you may have to manually insert specific data sources in the subgraph, such as isolated organizations, apps or tokens.
+- Some data is missing in my subgraph
+  Even though the way in which this template collects many data sources, there are some cases in which a contract is deployed in a way that isolates it from the general data sources. For example, you may deploy an organization manually, without using the official templates or factories. If this is the case, such organization will not be detected by the bootstrapped data sources. Also, there may be a bug in which this template scans the data sources. If you find missing information in your subgraph, lets discuss your case to see if there's a bug in the template. If a bug is not the case, you may have to manually insert specific data sources in the subgraph, such as isolated organizations, apps or tokens.
 
-* I'm getting errors about missing ABIs when the subgraph is indexing
-When a reducer is run, it's run in the context of the data source that defined it. For example, hooks are triggered by src/base/Kernel.ts when the NewAppProxy event is detected in an Organization. You need to include the missing ABI in manifest/templates/contracts/Kernel.template.yaml for it to be available in this reducer. As a rule of thumb, if your data source will be triggered by a base Aragon data source (Organization templates, Organization factories, etc), include your its ABI in the manifest/templates/contracts files.
+- I'm getting errors about missing ABIs when the subgraph is indexing
+  When a reducer is run, it's run in the context of the data source that defined it. For example, hooks are triggered by src/base/Kernel.ts when the NewAppProxy event is detected in an Organization. You need to include the missing ABI in manifest/templates/contracts/Kernel.template.yaml for it to be available in this reducer. As a rule of thumb, if your data source will be triggered by a base Aragon data source (Organization templates, Organization factories, etc), include your its ABI in the manifest/templates/contracts files.
 
-* My callHandlers aren't working
-Unfortunately, TheGraph does not support callHandlers in Rinkeby. For this reason, this template avoids them altogether. In general, we prefer to code subgraphs in a way that is compatible with all networks. Alternatively, if you by all means need to use this feature, consider hosting your own subgraph.
+- My callHandlers aren't working
+  Unfortunately, TheGraph does not support callHandlers in Rinkeby. For this reason, this template avoids them altogether. In general, we prefer to code subgraphs in a way that is compatible with all networks. Alternatively, if you by all means need to use this feature, consider hosting your own subgraph.
