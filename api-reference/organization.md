@@ -8,18 +8,18 @@ An `Organization` instance represents an Aragon organization and allows to inter
 
 Fetch the apps installed in the organization.
 
-| Name    | Type             | Description                                      |
-| :------ | :--------------- | :----------------------------------------------- |
-| returns | `Promise<App[]>` | A promise resolving to the current list of apps. |
+| Name    | Type                     | Description                                      |
+| :------ | :----------------------- | :----------------------------------------------- |
+| returns | `Promise<Application[]>` | A promise resolving to the current list of apps. |
 
 ### Organization\#app\(appAddress\)
 
 Fetch a specific app in the organization.
 
-| Name         | Type           | Description                     |
-| :----------- | :------------- | :------------------------------ |
-| `appAddress` | `String`       | The address of an app instance. |
-| returns      | `Promise<App>` | A promise resolving to an app.  |
+| Name         | Type                   | Description                              |
+| :----------- | :--------------------- | :--------------------------------------- |
+| `appAddress` | `String`               | The address of an app instance.          |
+| returns      | `Promise<Application>` | A promise resolving to an `Application`. |
 
 ### Organization\#addApp\(repoName, options\)
 
@@ -47,9 +47,9 @@ Remove an app from the organization.
 
 Fetch the organization’s permissions.
 
-| Name    | Type                   | Description                             |
-| :------ | :--------------------- | :-------------------------------------- |
-| returns | `Promise<Permissions>` | A promise resolving to a `Permissions`. |
+| Name    | Type                    | Description                                   |
+| :------ | :---------------------- | :-------------------------------------------- |
+| returns | `Promise<Permission[]>` | A promise resolving to a list of permissions. |
 
 ### Organization\#addPermission\(address, appAddress, roleId\)
 
@@ -171,9 +171,9 @@ Start receiving a specific app. Gets called every time the app updates.
 
 #### Callback params
 
-| Name  | Type  | Description                        |
-| :---- | :---- | :--------------------------------- |
-| `app` | `App` | The app that is being listened to. |
+| Name  | Type          | Description                        |
+| :---- | :------------ | :--------------------------------- |
+| `app` | `Application` | The app that is being listened to. |
 
 ### apps
 
@@ -181,15 +181,15 @@ Start receiving an array of the installed apps. Gets called every time a change 
 
 #### Listener params
 
-| Name           | Type            | Description                               |
-| :------------- | :-------------- | :---------------------------------------- |
-| `appAddresses` | `Array<String>` | The app addresses to receive updates for. |
+| Name           | Type       | Description                               |
+| :------------- | :--------- | :---------------------------------------- |
+| `appAddresses` | `String[]` | The app addresses to receive updates for. |
 
 #### Callback params
 
-| Name   | Type         | Description                          |
-| :----- | :----------- | :----------------------------------- |
-| `apps` | `Array<App>` | The apps that are being listened to. |
+| Name   | Type            | Description                          |
+| :----- | :-------------- | :----------------------------------- |
+| `apps` | `Application[]` | The apps that are being listened to. |
 
 ### appEvent
 
@@ -232,6 +232,6 @@ Start receiving the permissions of the org.
 
 #### Callback params
 
-| Name          | Type          | Description               |
-| :------------ | :------------ | :------------------------ |
-| `permissions` | `Permissions` | A `Permissions` instance. |
+| Name          | Type           | Description            |
+| :------------ | :------------- | :--------------------- |
+| `permissions` | `Permission[]` | A list of permissions. |

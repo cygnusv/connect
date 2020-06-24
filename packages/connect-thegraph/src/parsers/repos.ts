@@ -3,10 +3,7 @@ import { App as AppDataGql } from '../queries/types'
 import { Repo as RepoDataGql } from '../queries/types'
 import { QueryResult } from '../types'
 
-export function parseRepo(
-  result: QueryResult,
-  connector: any
-): Repository {
+export function parseRepo(result: QueryResult, connector: any): Repository {
   const app = result.data.app as AppDataGql
   const repo = app.repo as RepoDataGql
 
@@ -20,7 +17,8 @@ export function parseRepo(
     contentUri: repo.lastVersion?.contentUri,
     manifest: repo.lastVersion?.manifest,
     name: repo.name,
-    registry: repo.registry?.name
+    registry: repo.registry?.name,
+    registryAddress: app.repo?.registry?.address,
   }
 
   return new Repository(data, connector)
